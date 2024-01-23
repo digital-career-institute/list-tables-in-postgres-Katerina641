@@ -27,13 +27,8 @@ public class main {
 
 		Connection connection = null;
 		Class.forName("org.postgresql.Driver");
-		connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/test", "postgres", "123456pas");
-		java.sql.Statement st = connection.createStatement();
-
-		// ResultSet rs = st.executeQuery("SELECT * FROM pg_catalog.pg_tables");
-
-		Connection jdbcConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/test", "postgres",
-				"123456pas");
+		
+		Connection jdbcConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/test", "postgres","pas");
 		DatabaseMetaData m = jdbcConnection.getMetaData();
 		String[] types = { "TABLE" };
 		ResultSet rs = m.getTables(null, null, "%", types);
